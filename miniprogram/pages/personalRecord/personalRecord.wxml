@@ -1,0 +1,57 @@
+<view class="container">
+    <view class="weui-cells personalRecord">
+        <view class="section" style="width:100%;margin-top:10px;background:white;padding:10px">
+            <picker bindchange="bindPickerChange" value="{{region}}" range="{{servicesArray}}">
+                选择所在区服:
+                <view class="picker" style="float:right;color:green;">{{servicesArray[index]}}</view>
+            </picker>
+        </view>
+        <view class="section" style="width:100%;margin-top:10px;background:white;padding:10px">
+            <picker mode="date" value="{{date}}" start="{{start}}" end="{{now}}" bindchange="bindDateChange">
+                选择日期:
+                <view class="picker" style="float:right;color:green;">{{date}}</view>
+            </picker>
+        </view>
+        <text style="width:100%;font-size:12px;margin-bottom:10px;">(显示所选日期前一星期对局数据)</text>
+        <view class="section" 
+        style="width:100%;margin-bottom:10px;background:white;padding:10px 10px 7px 10px;">
+            <view class="weui-cell weui-cell_input" style="display: inline-block;">
+                <input class="weui-input" auto-focus="{{true}}" placeholder="召唤师名称" bindinput="bindKeyInput" />
+            </view>
+            <icon bindtap="search" style="float:right;display: inline-block;" class="icon-small" 
+            type="search" size="22" color="green"></icon>
+        </view>
+        <view class="table" hidden="{{tableHidden}}">
+            <view class="tr bg-w">
+                <view class="th" style="width:15%">英雄</view>
+                <view class="th" style="width:15%">位置</view>
+                <view class="th" style="width:30%">类型</view>
+                <view class="th" style="width:30%">时间</view>
+                <!-- <view class="th" style="width:10%">结果</view> -->
+                <view class="th" style="width:10%"></view>
+            </view>
+            <block wx:for="{{listData}}" wx:key="{[code]}">
+                <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                    <view class="td" style="width:15%">
+                        <image style="width: 30px;height: 30px;" mode="scaleToFill" src="{{item.heroImage}}"></image>
+                    </view>
+                    <view class="td" style="width:15%">{{item.position}}</view>
+                    <view class="td" style="width:30%">{{item.type}}</view>
+                    <view class="td" style="width:30%">{{item.date}}</view>
+                    <!-- <view class="td" style="width:10%">{{item.result}}</view> -->
+                    <view class='iconfont icon-xiangxixinxi'bindtap="getMatchDetail" data-id="{{item.gameId}}" style='color:green;font-size:22px;width:10%'></view>
+                </view>
+                <view class="tr" wx:else>
+                    <view class="td" style="width:15%">
+                        <image style="width: 30px;height: 30px;" mode="scaleToFill" src="{{item.heroImage}}"></image>
+                    </view>
+                    <view class="td" style="width:15%">{{item.position}}</view>
+                    <view class="td" style="width:30%">{{item.type}}</view>
+                    <view class="td" style="width:30%">{{item.date}}</view>
+                    <!-- <view class="td" style="width:10%">{{item.result}}</view> -->
+                    <view class='iconfont icon-xiangxixinxi' bindtap="getMatchDetail" data-id="{{item.gameId}}" style='color:green;font-size:22px;width:10%'></view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

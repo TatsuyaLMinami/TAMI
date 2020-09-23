@@ -1,0 +1,11 @@
+<view class="container">
+    <view class="weui-cells lol">
+        <navigator url="../personalRecord/personalRecord" style="width:100%;">
+            <text>查询个人战绩</text>
+                
+        </navigator>
+        <navigator url="../rank/rank" style="width:100%;">
+            <text>查看各区服排行榜</text>
+        </navigator>
+    </view>
+</view>

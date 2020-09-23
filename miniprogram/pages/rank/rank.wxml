@@ -1,0 +1,38 @@
+<view class="container">
+    <view class="weui-cells rank">
+        <view class="section" 
+        style="width:100%;margin-top:10px;margin-bottom:10px;background:white;padding:10px;">
+            <picker style="display: inline-block;" bindchange="bindPickerChange" value="{{region}}" range="{{array}}">
+                选择所在区服: 
+                <view class="picker" style="display:inline-block;margin-left: 100px;color:green">{{array[index]}}</view>
+            </picker>
+            <icon bindtap="search" style="float:right;display: inline-block;" class="icon-small" 
+            type="search" size="22" color="green"></icon>
+        </view>
+        <view class="table" hidden="{{tableHidden}}">
+            <view class="tr bg-w">
+                <view class="th" style="width:40%">昵称</view>
+                <view class="th" style="width:15%">胜点</view>
+                <view class="th" style="width:15%">胜场</view>
+                <view class="th" style="width:15%">负场</view>
+                <view class="th" style="width:15%">胜率</view>
+            </view>
+            <block wx:for="{{listData}}" wx:key="{[code]}">
+                <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                    <view class="td ellipsis" style="width:40%">{{item.summonerName}}</view>
+                    <view class="td" style="width:15%">{{item.leaguePoints}}</view>
+                    <view class="td" style="width:15%">{{item.wins}}</view>
+                    <view class="td" style="width:15%">{{item.losses}}</view>
+                    <view class="td" style="width:15%">{{item.winRate}}</view>
+                </view>
+                <view class="tr" wx:else>
+                    <view class="td ellipsis" style="width:40%">{{item.summonerName}}</view>
+                    <view class="td" style="width:15%">{{item.leaguePoints}}</view>
+                    <view class="td" style="width:15%">{{item.wins}}</view>
+                    <view class="td" style="width:15%">{{item.losses}}</view>
+                    <view class="td" style="width:15%">{{item.winRate}}</view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,91 @@
+<view class="matchDetail">
+    <view class="title">
+        <text>{{title}}</text>
+    </view>
+    <view class="top">
+        <text class="topText">{{date}}</text>
+        <text class="topText">{{duration}}</text>
+        <text class="topText">{{queue}}</text>
+    </view>
+    <view style="display:flex;justify-content: space-around;">
+        <view class="my" style="background:{{myStyle}}">
+            <text class="totalText">大龙:{{myBarons}}</text>
+            <text class="totalText">小龙:{{myDragons}}</text>
+            <!-- towerKills -->
+            <text class="totalText">塔:{{myTowers}}</text>
+            <!-- inhibitorKills -->
+            <text class="totalText">水晶:{{myInhibitors}}</text>
+        </view>
+        <!-- <image style="width: 30px;height: 30px;" mode="scaleToFill" src="{{KDAImage}}"></image> -->
+        <view class="enemy" style="background:{{enemyStyle}}">
+            <text class="totalText">大龙:{{enemyBarons}}</text>
+            <text class="totalText">小龙:{{enemyDragons}}</text>
+            <!-- towerKills -->
+            <text class="totalText">塔:{{enemyTowers}}</text>
+            <!-- inhibitorKills -->
+            <text class="totalText">水晶:{{enemyInhibitors}}</text>
+        </view>
+    </view>
+    <view class="myTotal">
+        <view style="padding: 5px 8px;background:lightGrey">
+            <text style="padding: 5px 6px;color: white;background:{{myStyle}}">我方{{myResult}}</text>
+            <view style="float:right;color:{{myStyle2}}">
+                <image style="width: 16px;height: 18px;bottom: -2px;position: relative;" mode="scaleToFill" src="{{goldImage}}"></image>
+                <text style="margin-right: 10px;">{{myTotalGold}}</text>
+                <image style="position: relative;bottom: -3px;width: 20px;height: 20px;" mode="scaleToFill" src="{{KDAImage}}"></image>
+                <text>{{myTotalKDA}}</text>
+            </view>
+        </view>
+        <block wx:for="{{myTeams}}" wx:key="{[code]}">
+            <view class="tr bg-g">
+                <view class="td" style="width:10%">
+                    <image style="width: 30px;height: 30px;" mode="scaleToFill" src="{{item.championImage}}"></image>
+                </view>
+                <view class="td" style="width:3%;font-size: 12px;">{{item.champLevel}}</view>
+                <view class="td" style="width:28%;font-size: 14px;color:{{item.myNameColor}};font-weight:{{item.myNameFont}}">{{item.summonerName}}</view>
+                <view class="td" style="width:35%">
+                    <image style="width: 20px;height: 20px;" binderror="errorMyTeamFunction" data-index='item0' mode="scaleToFill" src="{{item.item0}}"></image>
+                    <image style="width: 20px;height: 20px;" binderror="errorMyTeamFunction" data-index='item1' mode="scaleToFill" src="{{item.item1}}"></image>
+                    <image style="width: 20px;height: 20px;" binderror="errorMyTeamFunction" data-index='item2' mode="scaleToFill" src="{{item.item2}}"></image>
+                    <image style="width: 20px;height: 20px;" binderror="errorMyTeamFunction" data-index='item3' mode="scaleToFill" src="{{item.item3}}"></image>
+                    <image style="width: 20px;height: 20px;" binderror="errorMyTeamFunction" data-index='item4' mode="scaleToFill" src="{{item.item4}}"></image>
+                    <image style="width: 20px;height: 20px;" binderror="errorMyTeamFunction" data-index='item5' mode="scaleToFill" src="{{item.item5}}"></image>
+                    <image style="width: 20px;height: 20px;" binderror="errorMyTeamFunction" data-index='item6' mode="scaleToFill" src="{{item.item6}}"></image>
+                </view>
+                <view class="td" style="width:10%;font-size: 14px;">{{item.gold}}</view>
+                <view class="td" style="width:12%;font-size: 14px;">{{item.KDA}}</view>
+            </view>
+        </block>
+    </view>
+    <view class="enemyTotal">
+        <view style="padding: 5px 8px;background:lightGrey">
+            <text style="padding: 5px 6px;color: white;background:{{enemyStyle}}">敌方{{enemyResult}}</text>
+            <view style="float:right;color:{{enemyStyle2}}">
+                <image style="width: 16px;height: 18px;bottom: -2px;position: relative;" mode="scaleToFill" src="{{goldImage}}"></image>
+                <text style="margin-right: 10px;">{{enemyTotalGold}}</text>
+                <image style="position: relative;bottom: -3px;width: 20px;height: 20px;" mode="scaleToFill" src="{{KDAImage}}"></image> 
+                <text>{{enemyTotalKDA}}</text>
+            </view>
+        </view>
+        <block wx:for="{{enemyTeams}}" wx:key="{[code]}">
+            <view class="tr bg-g">
+                <view class="td" style="width:10%">
+                    <image style="width: 30px;height: 30px;" mode="scaleToFill" src="{{item.championImage}}"></image>
+                </view>
+                <view class="td" style="width:3%;font-size: 12px;">{{item.champLevel}}</view>
+                <view class="td" style="width:28%;font-size: 14px;">{{item.summonerName}}</view>
+                <view class="td" style="width:35%">
+                    <image style="width: 20px;height: 20px;" binderror="errorEnemyTeamFunction" data-index='item0' mode="scaleToFill" src="{{item.item0}}"></image>
+                    <image style="width: 20px;height: 20px;" binderror="errorEnemyTeamFunction" data-index='item1' mode="scaleToFill" src="{{item.item1}}"></image>
+                    <image style="width: 20px;height: 20px;" binderror="errorEnemyTeamFunction" data-index='item2' mode="scaleToFill" src="{{item.item2}}"></image>
+                    <image style="width: 20px;height: 20px;" binderror="errorEnemyTeamFunction" data-index='item3' mode="scaleToFill" src="{{item.item3}}"></image>
+                    <image style="width: 20px;height: 20px;" binderror="errorEnemyTeamFunction" data-index='item4' mode="scaleToFill" src="{{item.item4}}"></image>
+                    <image style="width: 20px;height: 20px;" binderror="errorEnemyTeamFunction" data-index='item5' mode="scaleToFill" src="{{item.item5}}"></image>
+                    <image style="width: 20px;height: 20px;" binderror="errorEnemyTeamFunction" data-index='item6' mode="scaleToFill" src="{{item.item6}}"></image>
+                </view>
+                <view class="td" style="width:10%;font-size: 14px;">{{item.gold}}</view>
+                <view class="td" style="width:12%;font-size: 14px;">{{item.KDA}}</view>
+            </view>
+        </block>
+    </view>
+</view>

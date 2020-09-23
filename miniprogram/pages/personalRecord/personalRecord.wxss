@@ -1,0 +1,70 @@
+.personalRecord {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+}
+@font-face {font-family: "iconfont";
+    src: url('iconfont.eot?t=1600394383869'); /* IE9 */
+    src: url('iconfont.eot?t=1600394383869#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAL8AAsAAAAABtgAAAKwAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqBXIFnATYCJAMICwYABCAFhG0HNhsTBsgekiRFupcVBTNJCRkCI4Ln78c3597zKwLTNpIiKakCC2jpr9FStNB68/L7vzn97Yh1Iu75YOuqCNXIFv9Pr+HLjZ6f0BVmfoqFJlKbcFOztO3oPAw8sCxLB8Ee000X8krk+59jpksvkPxAc8kO2hvguHVgGVdJR3aHDeA3jN1E8ABvJtBpliZ1strehnkJrArEI+70YL7gltKJtQutDQdTvNGivbwuN8Ah//j4JxPzFC0VKLhwpzKE/E+ACVPaqOsUgbOcEc4xKraBJK40hs+ZEg5xSmd42iI4Vm7wE/4bqhVH/eeJViC7G0zr7GfiYO6jVhSQnn38FHB/UgItPZOd4DKvXg6+Xnr/8vaYP+CLszC+mVSM75PqP+1V8WXQyTuNuW2VLlk4912I/PmpARmUSQRVN2Vk9oCc+b5YVErq5KRaUIiUglqeTJ9QikR+SlmdnFCLDbiiWppyUilkr488Wzc3oGu9e3ZbzkiZorfPwAxLWy4P0HyuH2vhD/+Nswc86qy1//MpwQ+vh9zZfE7DrKD9PizB/+QMbMuYBzQlQ05jvDhl5j5rOnWiYdoHfU6Vj9y8MbQXOA4UbWagareMTOw2tOiyA63aHYFOW2rHuwwRpkR2YNOxBqHfKRS9PkLV7xaZ2A9oMeoLWvXHFHS6FvmCXVaDL3aBPYlD1j9ifBAGhHRyUeRuorPn9USex0m7KBLuY7ZhlWM1DFAssSXZdzJSEiMR+qyq3Q49L2SRCMc4kMZIyihnmtT0RsYg9GHRCQLqkdAQ03eE4QZCAaLdpcXK+29Cjj2eHtHRMqLfhYQEn5yxGawByJo4GNTyKK9J7HNkSBJhiBDyMVXNiDwYDjFR87wxNCAZRhOCkRzT6ERDxcb2Uv/v9kAnoCgBC6ru57wXOIShCwJdBQA=') format('woff2'),
+    url('iconfont.woff?t=1600394383869') format('woff'),
+    url('iconfont.ttf?t=1600394383869') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('iconfont.svg?t=1600394383869#iconfont') format('svg'); /* iOS 4.1- */
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-xiangxixinxi:before {
+    content: "\e64c";
+  }
+  
+.ellipsis{
+    text-overflow :ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.ellipsis:hover{
+    overflow: visible;
+}
+.table {
+    border: 0px solid darkgray;
+    width:100%;
+}
+
+.tr {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 2.5rem;
+    align-items: center;
+}
+
+.td {
+    width: 40%;
+    justify-content: center;
+    text-align: center;
+}
+
+.bg-w {
+    background: snow;
+}
+
+.bg-g {
+    background: #E6F3F9;
+}
+
+.th {
+    width: 40%;
+    justify-content: center;
+    background: #3366FF;
+    color: #fff;
+    display: flex;
+    height:2.5rem;
+    align-items: center;
+}

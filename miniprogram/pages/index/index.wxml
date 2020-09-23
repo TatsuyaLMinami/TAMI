@@ -1,0 +1,15 @@
+<!-- index.wxml -->
+<view class="container">
+    <!-- <view class="main">
+        <view class='iconfont icon-zhihu' style='color:blue;font-size:50px;'></view>
+        <view class='iconfont icon-douban' style='color:green;font-size:50px;'></view>
+        <view class='iconfont icon-weibo' style='color:red;font-size:50px;'></view>
+    </view> -->
+    <view class="main">
+        <!-- <view class='iconfont icon-R' style='color:blue;font-size:50px;'></view> -->
+        <navigator url="../lol/lol">
+            <view class='iconfont icon-lol' style='color:gold;font-size:50px;'></view>
+        </navigator>
+        <!-- <view class='iconfont icon-dnf' style='color:green;font-size:50px;'></view> -->
+    </view>
+</view>
